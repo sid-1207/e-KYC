@@ -1,10 +1,10 @@
 # e-KYC Verification
-Online verification of government issued documents.
+Online verification of government-issued documents.
 
 ## The problem EKYC Verification solves
-- There are continued fraud reports about customers uploading documents of some third party, deceased individuals without their consent leading to forged accounts being opened, hence this face recogition verification helps with this.
+- There are continued fraud reports about customers uploading documents of some third party, deceased individuals without their consent leading to forged accounts being opened, hence this face recognition verification helps with this.
 - It verifies if the scanned documents belong to the person presenting it.
-- Hence the individual goverment issuers can use this to validate their data.
+- Hence the individual government issuers can use this to validate their data.
 
 ## Challenges we ran into
 - Difficult to implement face recognition from these documents since they were pixelated.
