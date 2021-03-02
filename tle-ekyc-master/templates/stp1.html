@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='app.css') }}">    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Step 1</title>
+    <style>
+      /* Center the loader */
+      #loader {
+        position: absolute;
+        left: 55%;
+        top: 60%;
+        z-index: 1;
+        width: 80px;
+        height: 80px;
+        margin: -76px 0 0 -76px;
+        border: 10px solid #5cb85c;
+        border-radius: 50%;
+        border-top: 10px solid whitesmoke;
+        -webkit-animation: spin 2s linear infinite;
+        animation: spin 2s linear infinite;
+      }
+      
+      @-webkit-keyframes spin {
+        0% { -webkit-transform: rotate(0deg); }
+        100% { -webkit-transform: rotate(360deg); }
+      }
+      
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+      
+      /* Add animation to "page content" */
+      .animate-bottom {
+        position: relative;
+        -webkit-animation-name: animatebottom;
+        -webkit-animation-duration: 1s;
+        animation-name: animatebottom;
+        animation-duration: 1s
+      }
+      
+      @-webkit-keyframes animatebottom {
+        from { bottom:-100px; opacity:0 } 
+        to { bottom:0px; opacity:1 }
+      }
+      
+      @keyframes animatebottom { 
+        from{ bottom:-100px; opacity:0 } 
+        to{ bottom:0; opacity:1 }
+      }
+      
+      #myDiv {
+        display: none;
+        text-align: center;
+      }
+      </style>
+
+  
+  </head>
+  <body>
+<section class="multi_step_form">  
+    <div id="msform">
+      <div id="loader" style="display: none;"></div>
+
+      <!-- Tittle -->
+      <div class="tittle">
+        <h2><b> KYC Verification Process</b></h2>
+        <p>In order to use this service, you have to complete this verification process</p>
+      </div>
+      <!-- progressbar -->
+      <ul id="progressbar">
+        <li class="active">Upload Document</li>  
+        <li>Live Video Check</li> 
+        <li>Result</li>
+      </ul>
+      <!-- fieldsets -->
+      <h4><b>Upload Document</b></h4>
+      <small class="text-muted">Aadhar,Passport,Driving License </small>
+      <div id="menu">
+      <fieldset>
+                
+        <form action="/upload-image" method="POST" enctype="multipart/form-data">
+          <div class="form-group">
+            <div class="custom-file">
+              <input type="file"  name="image" id="image" />
+            </div>
+          </div>
+          <button type="submit" class="btn btn-outline-success" onclick="showpage()">Upload</button>
+        </form> 
+        <hr>
+        <div class="done_text"> 
+          <span><i class="fas fa-circle"></i><i class="fas fa-circle"></i><i class="fas fa-circle"></i><i class="fas fa-circle"></i><i class="fas fa-circle"></i></span> 
+        </div>
+      </fieldset>  
+    </div>
+    </div>
+  </section> 
+  <!-- End Multi step form --> 
+  <script>
+    var myVar;
+    function  showpage(){
+      document.getElementById("loader").style.display="block";
+     document.getElementById("menu").style.display="none";
+     document.getElementById("menu2").style.display="none";
+    }
+    
+  </script>
+  <script src="{{ url_for('static', filename='app.js') }}"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>  
+  
+</body>
+</html>
