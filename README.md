@@ -1,4 +1,4 @@
-# EKYC-Verification
+# e-KYC Verification
 Online verification of government issued documents.
 
 ## The problem EKYC Verification solves
